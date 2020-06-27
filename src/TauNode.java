@@ -37,7 +37,7 @@ public class TauNode extends _MultipolarNode {
 //        TestMain.addnewSTNode(aug);
 //
 //        if (count < 2) {
-//            NilNode nil = new NilNode(secondaryGamma, lev + 2);
+//            LEAF_NilNode nil = new LEAF_NilNode(secondaryGamma, lev + 2);
 //            secondaryGamma.addChild(nil, 1);
 //            TestMain.addnewSTNode(nil);
 //            System.out.println("came");
