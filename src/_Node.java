@@ -1,18 +1,14 @@
-/**
- * Created by chamikanandasiri on 6/27/2020.
- */
 
 import java.util.ArrayList;
 
 public abstract class _Node {
     String type;
-    private int level;
     private _Node parent;
+    boolean disconnected = false;
 
 
-    public _Node(_Node parent, int level) {
+    public _Node(_Node parent) {
         this.parent = parent;
-        this.level = level;
     }
 
     public _Node getParent() {
@@ -24,10 +20,10 @@ public abstract class _Node {
     }
 
     public int getLevel() {
-        return level;
+        return getParent().getLevel() + 1;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void disconnect(){
+        disconnected = true;
     }
 }

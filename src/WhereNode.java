@@ -1,31 +1,46 @@
 import java.util.Objects;
 
-public class WhereNode extends _BipolarNode {
-    public WhereNode(_Node parent,int level) {
-        super(parent,level);
+public class WhereNode extends _BipolarNode implements Standardizable {
+    public WhereNode(_Node parent, int level) {
+        super(parent, level);
         type = "where";
     }
 
-//    public void Standersize() {
-//        if(Objects.equals(getRightChild().type, "=")){
-//            System.out.println("Standardized where node");
-//
-//            _Node X = ((_BipolarNode)getRightChild()).getLeftChild();
-//            _Node E = ((_BipolarNode)getRightChild()).getRightChild();
-//            _Node P = getLeftChild();
-//
-//            LambdaNode lambda = new LambdaNode(this,level+1);
-//            addChild(lambda,0);
-//            lambda.addChild(X,0);
-//            lambda.addChild(P,1);
-//            X.setParent(lambda);
-//            P.setParent(lambda);
-//            E.setParent(this);
-//            addChild(E,1);
-//            TestMain.addnewSTNode(lambda);
-//
-//            standardized = true;
-//        }
-//    }
+    @Override
+    public void standardize() {
+
+        if (Objects.equals(getRightChild().type, "=")) {
+            System.out.println("Standardized Where node");
+            _Node X = ((_BipolarNode) getRightChild()).getLeftChild();
+            _Node E = ((_BipolarNode) getRightChild()).getRightChild();
+            _Node P = getLeftChild();
+            _TrunkNode par = (_TrunkNode) getParent();
+            int thisIndex = par.getChildren().indexOf(this);
+            int level = getLevel();
+
+            getRightChild().disconnect();
+            disconnect();
+
+            GammaNode gamma = new GammaNode(par, level);
+            LambdaNode lambda = new LambdaNode(gamma, level + 1);
+            par.removeAddChild(gamma, thisIndex);
+            gamma.addChild(lambda, 0);
+            lambda.addChild(X, 0);
+            lambda.addChild(P, 1);
+            X.setParent(lambda);
+            X.setLevel(level + 2);
+            P.setParent(lambda);
+            P.setLevel(level + 2);
+            gamma.addChild(E, 1);
+            E.setParent(gamma);
+            E.setLevel(level + 1);
+            Main.addSTtree(gamma);
+            Main.addSTtree(lambda);
+            standardized = true;
+
+        } else {
+            Main.addSTtree(this);
+        }
+    }
 
 }

@@ -1,6 +1,6 @@
-public class ari_MinusNode extends _BipolarNode {
-    public ari_MinusNode(_Node parent, int level) {
-        super(parent,level);
+public class ari_MinusNode extends _BinaryOpNode {
+    public ari_MinusNode(_Node parent) {
+        super(parent);
         type = "-";
     }
 

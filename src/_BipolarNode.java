@@ -1,9 +1,9 @@
 /**
  * Created by chamikanandasiri on 6/27/2020.
  */
-public class _BipolarNode extends _TrunkNode {
-    public _BipolarNode(_Node parent, int level) {
-        super(parent, level);
+public abstract class _BipolarNode extends _TrunkNode {
+    public _BipolarNode(_Node parent) {
+        super(parent);
     }
 
     public _Node getLeftChild(){

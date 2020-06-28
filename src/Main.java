@@ -6,20 +6,37 @@ public class Main {
 
     static ArrayList<String> inputLines;
     static ArrayList<String[]> childArray;
-    static ArrayList<_Node> tree, STtree;
+    static ArrayList<_Node> AST, STtree;
     static HashMap<Integer, _Node> nodeCurrent;
 
     public static void main(String[] args) {
         inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\fn1.txt");
         childArray = new ArrayList<>();
         nodeCurrent = new HashMap<>();
-        tree = new ArrayList<>();
+        AST = new ArrayList<>();
         STtree = new ArrayList<>();
 
         nodeCurrent.put(-1, new RootNode());
         countDots();
         createTree();
-        printTree(tree);
+        printTree(AST);
+        System.out.println("###############################");
+        LoopingStandard(AST);
+        printTree(STtree);
+    }
+
+    private static void LoopingStandard(ArrayList<_Node> currentTree){
+        boolean t = true;
+        ArrayList<_Node> TempTree = currentTree;
+        while (t){
+            STtree = new ArrayList<>();
+            t = Standardization(TempTree);
+            System.out.println("###############################");
+            printTree(STtree);
+            System.out.println("###############################");
+            TempTree = new ArrayList<>(STtree);
+        }
+
     }
 
     private static void countDots() {
@@ -56,7 +73,7 @@ public class Main {
             } else {
                 nodeCurrent.put(Integer.parseInt(x[1]), child);
             }
-            tree.add(child);
+            AST.add(child);
             setChildRelations(parent, child);
         }
     }
@@ -66,7 +83,7 @@ public class Main {
         if (Objects.equals(x, "let")) {
             returnNode = new LetNode(parent, lev);
         } else if (Objects.equals(x, "lambda")) {
-            returnNode = new MultiLambdaNode(parent, lev);
+            returnNode = new LambdaNode(parent, lev);
         } else if (Objects.equals(x, "where")) {
             returnNode = new WhereNode(parent, lev);
 
@@ -155,13 +172,32 @@ public class Main {
         for (_Node n : nodeTree) {
             if ((n instanceof _TrunkNode) && ((_TrunkNode)n).getChildren().size()>0) {
                 if( n.getParent() != null) {
-                    System.out.println(n.type + " has parent " + n.getParent().type);
+                    System.out.println(n.type + " at level " + n.getLevel() + " has parent " + n.getParent().type);
                 }
                 for (_Node m: ((_TrunkNode)n).getChildren()) {
-                    System.out.println(n.type + " has child " + m.type);
+                    System.out.println(n.type + " at level " + n.getLevel() +" has child " + m.type);
                 }
             }
         }
+    }
+
+    public static void addSTtree(_Node node){
+        STtree.add(node);
+    }
+
+    private static boolean Standardization(ArrayList<_Node> tree) {
+        boolean didAnyStandardized = false;
+        for (_Node n: tree) {
+            if((n instanceof Standardizable)&&(!((_TrunkNode)n).getStandardized())){
+                ((Standardizable) n).standardize();
+                didAnyStandardized = didAnyStandardized || ((_TrunkNode)n).getStandardized();
+                System.out.println("Main standard "+ n.type + " at " + n.getLevel());
+            }else if(!(n instanceof Standardizable) && !(n.disconnected)){
+                addSTtree(n);
+                System.out.println("Added without "+ n.type + " at " + n.getLevel());
+            }
+        }
+    return didAnyStandardized;
     }
 
 }
