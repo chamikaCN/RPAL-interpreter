@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 public class WhereNode extends _BipolarNode implements Standardizable {
-    public WhereNode(_Node parent, int level) {
-        super(parent, level);
+    public WhereNode(_Node parent) {
+        super(parent);
         type = "where";
     }
 
@@ -21,19 +21,16 @@ public class WhereNode extends _BipolarNode implements Standardizable {
             getRightChild().disconnect();
             disconnect();
 
-            GammaNode gamma = new GammaNode(par, level);
-            LambdaNode lambda = new LambdaNode(gamma, level + 1);
+            GammaNode gamma = new GammaNode(par);
+            LambdaNode lambda = new LambdaNode(gamma);
             par.removeAddChild(gamma, thisIndex);
             gamma.addChild(lambda, 0);
             lambda.addChild(X, 0);
             lambda.addChild(P, 1);
             X.setParent(lambda);
-            X.setLevel(level + 2);
             P.setParent(lambda);
-            P.setLevel(level + 2);
             gamma.addChild(E, 1);
             E.setParent(gamma);
-            E.setLevel(level + 1);
             Main.addSTtree(gamma);
             Main.addSTtree(lambda);
             standardized = true;

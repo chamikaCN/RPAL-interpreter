@@ -41,13 +41,13 @@ public class AndNode extends _MultipolarNode implements Standardizable {
                 eq.disconnect();
             }
 
-            EqualNode equal = new EqualNode(par, level);
+            EqualNode equal = new EqualNode(par);
             par.removeAddChild(equal, thisIndex);
 
-            CommaNode comma = new CommaNode(equal, level + 1);
+            CommaNode comma = new CommaNode(equal);
             equal.addChild(comma, 0);
 
-            TauNode tau = new TauNode(equal, level + 1);
+            TauNode tau = new TauNode(equal);
             equal.addChild(tau, 1);
 
             for (_Node eq : Eqs) {

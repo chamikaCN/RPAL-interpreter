@@ -1,7 +1,7 @@
 public class CommaNode extends _MultipolarNode {
 
-    public CommaNode(_Node parent, int level) {
-        super(parent,level);
+    public CommaNode(_Node parent) {
+        super(parent);
         type = ",";
     }
 

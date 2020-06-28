@@ -3,8 +3,8 @@
  */
 public class LEAF_INTnode extends _ValueNode {
     private int val;
-    public LEAF_INTnode(_Node parent, int value, int level) {
-        super(parent,level,String.valueOf(value));
+    public LEAF_INTnode(_Node parent, int value) {
+        super(parent,String.valueOf(value));
         this.val = val;
         type = "<INT:>";
     }

@@ -4,8 +4,8 @@ import java.util.Objects;
  * Created by chamikanandasiri on 6/27/2020.
  */
 public class WithinNode extends _BipolarNode implements Standardizable {
-    public WithinNode(_Node parent, int level) {
-        super(parent, level);
+    public WithinNode(_Node parent) {
+        super(parent);
         type = "within";
     }
 
@@ -27,26 +27,22 @@ public class WithinNode extends _BipolarNode implements Standardizable {
             getLeftChild().disconnect();
             getRightChild().disconnect();
 
-            EqualNode eq = new EqualNode(par, level);
+            EqualNode eq = new EqualNode(par);
             par.removeAddChild(eq, thisIndex);
             eq.addChild(X2, 0);
             X2.setParent(eq);
-            X2.setLevel(level + 1);
 
-            GammaNode gamma = new GammaNode(eq, level + 1);
+            GammaNode gamma = new GammaNode(eq);
             eq.addChild(gamma, 1);
             gamma.addChild(E1, 1);
             E1.setParent(gamma);
-            E1.setLevel(level + 2);
 
-            LambdaNode lambda = new LambdaNode(gamma, level + 2);
+            LambdaNode lambda = new LambdaNode(gamma);
             gamma.addChild(lambda, 0);
             lambda.addChild(X1, 0);
             X1.setParent(lambda);
-            X1.setLevel(level + 3);
             lambda.addChild(E2, 1);
             E2.setParent(lambda);
-            E2.setLevel(level + 3);
 
             Main.addSTtree(eq);
             Main.addSTtree(gamma);

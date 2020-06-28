@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 public class LetNode extends _BipolarNode implements Standardizable {
-    public LetNode(_Node parent, int level) {
-        super(parent, level);
+    public LetNode(_Node parent) {
+        super(parent);
         type = "let";
     }
 
@@ -21,19 +21,16 @@ public class LetNode extends _BipolarNode implements Standardizable {
             disconnect();
             getLeftChild().disconnect();
 
-            GammaNode gamma = new GammaNode(par,level);
-            LambdaNode lambda = new LambdaNode(gamma,level+1);
+            GammaNode gamma = new GammaNode(par);
+            LambdaNode lambda = new LambdaNode(gamma);
             par.removeAddChild(gamma,thisIndex);
             gamma.addChild(lambda,0);
             lambda.addChild(X,0);
             lambda.addChild(P,1);
             X.setParent(lambda);
-            X.setLevel(level+2);
             P.setParent(lambda);
-            P.setLevel(level+2);
             gamma.addChild(E,1);
             E.setParent(gamma);
-            E.setLevel(level+1);
             Main.addSTtree(gamma);
             Main.addSTtree(lambda);
             standardized = true;

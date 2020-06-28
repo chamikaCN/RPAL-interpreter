@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class MultiLambdaNode extends _MultipolarNode implements Standardizable {
-    public MultiLambdaNode(_Node parent, int level) {
-        super(parent,level);
+    public MultiLambdaNode(_Node parent) {
+        super(parent);
         type = "multilambda";
     }
 
@@ -40,14 +40,13 @@ public class MultiLambdaNode extends _MultipolarNode implements Standardizable {
     }
 
     private _Node standerizeMultiLambda(int count, _Node parent, int lev, ArrayList<_Node> vars, _Node E) {
-        LambdaNode lambda = new LambdaNode(parent, lev);
+        LambdaNode lambda = new LambdaNode(parent);
         Main.addSTtree(lambda);
         lambda.addChild(vars.get(0), 0);
 
         if (count < 2) {
             lambda.addChild(E,1);
             E.setParent(lambda);
-            E.setLevel(lev+1);
             return lambda;
         } else {
             _Node k = standerizeMultiLambda(count - 1, lambda, lev + 1, new ArrayList<>(vars.subList(1, vars.size())),E);

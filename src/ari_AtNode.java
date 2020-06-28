@@ -32,12 +32,12 @@ public class ari_AtNode extends _MultipolarNode implements Standardizable {
 
         disconnect();
 
-        GammaNode gamma = new GammaNode(par, level);
+        GammaNode gamma = new GammaNode(par);
         par.removeAddChild(gamma, thisIndex);
         gamma.addChild(E2, 1);
         E2.setParent(gamma);
 
-        GammaNode secondgamma = new GammaNode(gamma, level + 1);
+        GammaNode secondgamma = new GammaNode(gamma);
         gamma.addChild(secondgamma, 0);
         secondgamma.addChild(E1, 1);
         E1.setParent(secondgamma);
