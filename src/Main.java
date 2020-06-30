@@ -10,7 +10,7 @@ public class Main {
     static HashMap<Integer, _Node> nodeCurrent;
 
     public static void main(String[] args) {
-        inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\Isstring.txt");
+        inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\substring.txt");
         childArray = new ArrayList<>();
         nodeCurrent = new HashMap<>();
         AST = new ArrayList<>();
@@ -68,6 +68,8 @@ public class Main {
                 child = new LEAF_INTnode(parent, Integer.parseInt(x[0].substring(5, x[0].length() - 1)));
             } else if (x[0].charAt(2) == 'T') {
                 child = new LEAF_STRnode(parent, x[0].substring(6, x[0].length() - 2));
+            } else if (x[0].charAt(1) == 'n') {
+                child =  new LEAF_NilNode(parent);
             }
             if (nodeCurrent.containsKey(Integer.parseInt(x[1]))) {
                 nodeCurrent.replace(Integer.parseInt(x[1]), child);

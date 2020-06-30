@@ -6,8 +6,8 @@ let
 ...ge
 ....<ID:N>
 ....<INT:0>
-...<STR:'positive'>
 ...<STR:'negative'>
+...<STR:'positive'>
 .gamma
 ..<ID:Print>
 ..gamma

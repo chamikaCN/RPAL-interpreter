@@ -34,15 +34,19 @@ public class ari_AtNode extends _MultipolarNode implements Standardizable {
 
         GammaNode gamma = new GammaNode(par);
         par.removeAddChild(gamma, thisIndex);
-        gamma.addChild(E2, 1);
-        E2.setParent(gamma);
 
         GammaNode secondgamma = new GammaNode(gamma);
         gamma.addChild(secondgamma, 0);
-        secondgamma.addChild(E1, 1);
-        E1.setParent(secondgamma);
+
+        gamma.addChild(E2, 1);
+        E2.setParent(gamma);
+
         secondgamma.addChild(N, 0);
         N.setParent(secondgamma);
+
+        secondgamma.addChild(E1, 1);
+        E1.setParent(secondgamma);
+
 
         Main.addSTtree(gamma);
         Main.addSTtree(secondgamma);

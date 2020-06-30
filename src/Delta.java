@@ -8,11 +8,13 @@ public class Delta extends _Node {
     private Environment linkedEnv;
     private Stack<_Node> valuestack;
     private _Node binding;
+    private ArrayList<_Node> bindings;
 
     public Delta(_Node parent) {
         super(parent);
         valuestack = new Stack<>();
         type = "delta";
+        bindings = new ArrayList<>();
     }
 
     public void pushValue(_Node n){
@@ -37,6 +39,18 @@ public class Delta extends _Node {
 
     public void setBinding(_Node binding) {
         this.binding =binding;
+    }
+
+    public _Node getBindingAt(int index){
+        return bindings.get(index);
+    }
+
+    public void setBindings(_Node newBinding) {
+        bindings.add(newBinding);
+    }
+
+    public int getBindingcount(){
+        return bindings.size();
     }
 
     public Environment getLinkedEnv() {

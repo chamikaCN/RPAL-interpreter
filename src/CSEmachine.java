@@ -26,7 +26,7 @@ public class CSEmachine {
         primitiveEnvironment = new Environment(null, 0);
         envCount++;
         rootDelta = new Delta(null);
-        rootDelta.setBinding(null);
+        rootDelta.setBindings(null);
         deltas.add(rootDelta);
         _Node root = null;
         for (_Node b : ST) {
@@ -54,9 +54,6 @@ public class CSEmachine {
         } else if (Objects.equals(root.type, "->")) {
             AddArrowNode(root, delta);
             return;
-        } else if (Objects.equals(root.type, "tau")) {
-            AddArrowNode(root, delta);
-            return;
         } else {
             delta.pushValue(root);
             if (root instanceof _ValueNode) {
@@ -73,6 +70,7 @@ public class CSEmachine {
         }
     }
 
+
     private void AddArrowNode(_Node arrow, Delta parentdelta) {
         Delta falseDelta = new Delta(arrow);
         traverseTree(((ArrowNode) arrow).getElseClause(), falseDelta);
@@ -87,7 +85,15 @@ public class CSEmachine {
 
     private Delta startNewDelta(Delta parent, _Node newRoot, _Node id) {
         Delta curDelta = new Delta(parent);
-        curDelta.setBinding(id);
+        if (id instanceof CommaNode) {
+            CommaNode com = (CommaNode) id;
+            int varCount = com.getChildren().size();
+            for (int f = 0; f < varCount; f++) {
+                curDelta.setBindings(com.getChildren().get(f));
+            }
+        } else {
+            curDelta.setBindings(id);
+        }
         deltas.add(curDelta);
         traverseTree(newRoot, curDelta);
         return curDelta;
@@ -104,6 +110,8 @@ public class CSEmachine {
         for (_Node n : nodes) {
             if (n instanceof _ValueNode) {
                 System.out.println(((_ValueNode) n).getLeafValue());
+            }else if (n instanceof Environment) {
+                System.out.println("envi " + ((Environment) n).getId());
             } else {
                 System.out.println(n.type);
             }
@@ -140,6 +148,8 @@ public class CSEmachine {
             applyGamma(m);
         } else if (m instanceof Beta) {
             applyArrowFunction(m);
+        } else if (m instanceof TauNode) {
+            createTuple(m);
         } else if (m instanceof Environment) {
             removeEnvironment(m);
         } else if (m instanceof Delta) {
@@ -153,6 +163,17 @@ public class CSEmachine {
         System.out.println("+++++++++++++++++++++");
         displayStack(valueStack);
         System.out.println("@@@@@@@@@@@@@@@@@@@@");
+    }
+
+    private void createTuple(_Node m) {
+        TauNode t = (TauNode) m;
+        int count = t.getElementCount();
+        Tuple tup = new Tuple(t);
+        for (int v = 0; v < count; v++) {
+            _Node n = valueStack.pop();
+            tup.addValue(n);
+        }
+        valueStack.push(tup);
     }
 
     private void applyArrowFunction(_Node beta) {
@@ -180,11 +201,24 @@ public class CSEmachine {
                 currentDelta = (Delta) currentDelta.getParent();
             }
             if (currentEnvironment != primitiveEnvironment) {
-                currentEnvironment = (Environment) currentEnvironment.getParent();
+                currentEnvironment = findPreviousEnvironment();
             }
         } else {
             System.out.println("Error in Remove Env operation");
         }
+    }
+
+    private Environment findPreviousEnvironment(){
+        Environment pre = null;
+        for (int h = valueStack.size()-1; h>=0;h--) {
+            _Node m = valueStack.elementAt(h);
+            if((m instanceof Environment) && m!=currentEnvironment){
+                System.out.println("going back to "+((Environment)m).getId());
+                pre = (Environment)m;
+                break;
+            }
+        }
+        return pre;
     }
 
     private void handleIdentifier(_Node identifier) {
@@ -205,7 +239,7 @@ public class CSEmachine {
         if (value != null) {
             valueStack.push(value);
         } else {
-            System.out.println("Error: " + iDnode.getLeafValue() + "not found");
+            System.out.println("Error: " + iDnode.getLeafValue() + " not found");
         }
 
     }
@@ -309,17 +343,36 @@ public class CSEmachine {
         _Node rator = valueStack.pop();
         if (rator instanceof Delta) {
             Delta del = (Delta) rator;
-            _Node r = valueStack.pop();
             currentDelta = del;
-            currentEnvironment = new Environment(currentEnvironment, envCount);
+            currentEnvironment = new Environment(currentDelta.getLinkedEnv(), envCount);
             envCount++;
-            currentEnvironment.addValue(((_ValueNode) currentDelta.getBinding()).getLeafValue(), r);
+            int bindingcount = currentDelta.getBindingcount();
+
+            if (bindingcount < 2) {
+                _Node r = valueStack.pop();
+                currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue(), r);
+                System.out.println("//////// "+((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue() +" en "+ currentEnvironment.getId() + " par "+ ((Environment)currentEnvironment.getParent()).getId());
+                if(r instanceof _ValueNode){System.out.println(((_ValueNode) r).getLeafValue());}
+            } else {
+                Tuple tup = (Tuple) valueStack.pop();
+                for (int h = 0; h < bindingcount; h++) {
+                    currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue(), tup.getValueAt(h + 1));
+                    System.out.println("//////// "+((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue() +" en "+ currentEnvironment.getId() +" par "+ ((Environment)currentEnvironment.getParent()).getId());
+                    if(tup.getValueAt(h + 1) instanceof _ValueNode){System.out.println(((_ValueNode)tup.getValueAt(h + 1)).getLeafValue());}
+                }
+            }
+            System.out.println("00000000 "+ currentEnvironment.getId()+" "+currentEnvironment.getValueCount());
             valueStack.push(currentEnvironment);
             controlStack.push(currentEnvironment);
             AddDeltaToControlStack(currentDelta);
         } else if (rator instanceof LEAF_YStarNode) {
             Delta del = (Delta) valueStack.pop();
             valueStack.push(new Eta(rator, del));
+        } else if (rator instanceof Tuple) {
+            Tuple tup = (Tuple) rator;
+            LEAF_INTnode index = (LEAF_INTnode) valueStack.pop();
+            _Node retrieved = tup.getValueAt(index.getInt());
+            valueStack.push(retrieved);
         } else if (rator instanceof Eta) {
             controlStack.push(m);
             controlStack.push(new GammaNode(m));
@@ -360,6 +413,9 @@ public class CSEmachine {
         } else if ((Objects.equals(val, "conc")) || (Objects.equals(val, "Conc"))) {
             _Node firstStr = valueStack.pop();
             valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) firstStr).getLeafValue().concat(((LEAF_STRnode) rand).getLeafValue())));
+            return true;
+        } else if ((Objects.equals(val, "order")) || (Objects.equals(val, "Order"))) {
+            valueStack.push(new LEAF_INTnode(rand, ((Tuple) rand).getCount()));
             return true;
         } else {
             return false;

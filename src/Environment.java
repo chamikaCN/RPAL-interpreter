@@ -27,6 +27,8 @@ public class Environment extends _Node {
 
     public boolean hasValue(String s){return values.containsKey(s);}
 
+    public int getValueCount(){return values.size();}
+
     public int getId() {
         return id;
     }
