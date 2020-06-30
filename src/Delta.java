@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -6,11 +7,12 @@ import java.util.Stack;
 public class Delta extends _Node {
     private Environment linkedEnv;
     private Stack<_Node> valuestack;
-    private _Node id;
+    private _Node binding;
 
     public Delta(_Node parent) {
         super(parent);
         valuestack = new Stack<>();
+        type = "delta";
     }
 
     public void pushValue(_Node n){
@@ -25,11 +27,23 @@ public class Delta extends _Node {
         return valuestack.peek();
     }
 
-    public _Node getId() {
-        return id;
+    public _Node getBinding() {
+        return binding;
     }
 
-    public void setId(_Node id) {
-        this.id = id;
+    public Stack<_Node> getValuestack() {
+        return valuestack;
+    }
+
+    public void setBinding(_Node binding) {
+        this.binding =binding;
+    }
+
+    public Environment getLinkedEnv() {
+        return linkedEnv;
+    }
+
+    public void setLinkedEnv(Environment linkedEnv) {
+        this.linkedEnv = linkedEnv;
     }
 }

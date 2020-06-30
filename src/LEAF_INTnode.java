@@ -5,7 +5,7 @@ public class LEAF_INTnode extends _ValueNode {
     private int val;
     public LEAF_INTnode(_Node parent, int value) {
         super(parent,String.valueOf(value));
-        this.val = val;
+        this.val = value;
         type = "<INT:>";
     }
 

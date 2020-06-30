@@ -10,7 +10,7 @@ public class Main {
     static HashMap<Integer, _Node> nodeCurrent;
 
     public static void main(String[] args) {
-        inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\cat.txt");
+        inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\Isstring.txt");
         childArray = new ArrayList<>();
         nodeCurrent = new HashMap<>();
         AST = new ArrayList<>();
@@ -132,9 +132,9 @@ public class Main {
         } else if (Objects.equals(x, "gamma")) {
             returnNode = new GammaNode(parent);
         } else if (Objects.equals(x, "true")) {
-            returnNode = new LEAF_TrueNode(parent);
+            returnNode = new LEAF_BooleanNode(parent,true);
         } else if (Objects.equals(x, "false")) {
-            returnNode = new LEAF_FalseNode(parent);
+            returnNode = new LEAF_BooleanNode(parent,false);
         } else if (Objects.equals(x, "nil")) {
             returnNode = new LEAF_NilNode(parent);
         } else if (Objects.equals(x, "dummy")) {
