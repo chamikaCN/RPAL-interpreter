@@ -1,6 +1,3 @@
-/**
- * Created by chamikanandasiri on 6/29/2020.
- */
 public class LEAF_BooleanNode extends  _ValueNode {
     boolean val;
     public LEAF_BooleanNode(_Node parent,boolean b) {

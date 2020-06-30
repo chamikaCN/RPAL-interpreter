@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by chamikanandasiri on 6/27/2020.
- */
 public abstract class _TrunkNode extends _Node {
     ArrayList<_Node> children;
     boolean standardized = false;

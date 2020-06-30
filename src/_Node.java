@@ -1,6 +1,3 @@
-
-import java.util.ArrayList;
-
 public abstract class _Node {
     String type;
     private _Node parent;

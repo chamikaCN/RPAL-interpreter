@@ -24,7 +24,6 @@ public class FunctionFormNode extends _MultipolarNode implements Standardizable 
 
     @Override
     public void standardize() {
-        System.out.println("Standardized Function node");
         _Node P = getIdentifier();
         ArrayList<_Node> Vs = getVariables();
         int varCount = getVariableCount();

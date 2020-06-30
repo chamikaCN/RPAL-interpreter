@@ -10,7 +10,6 @@ public class WhereNode extends _BipolarNode implements Standardizable {
     public void standardize() {
 
         if (Objects.equals(getRightChild().type, "=")) {
-            System.out.println("Standardized Where node");
             _Node X = ((_BipolarNode) getRightChild()).getLeftChild();
             _Node E = ((_BipolarNode) getRightChild()).getRightChild();
             _Node P = getLeftChild();

@@ -9,7 +9,6 @@ public class RecNode extends _UnipolarNode implements Standardizable {
     @Override
     public void standardize() {
         if (Objects.equals(getChild().type, "=")) {
-            System.out.println("Standardized Rec node");
             _Node X = ((_BipolarNode) getChild()).getLeftChild();
             _Node X2 = new LEAF_IDnode(X.getParent(), ((LEAF_IDnode) X).getId());
 
@@ -17,7 +16,6 @@ public class RecNode extends _UnipolarNode implements Standardizable {
 
             _TrunkNode par = (_TrunkNode) getParent();
             int thisIndex = par.getChildren().indexOf(this);
-            int level = getLevel();
 
             getChild().disconnect();
             disconnect();

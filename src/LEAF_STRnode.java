@@ -1,6 +1,3 @@
-/**
- * Created by chamikanandasiri on 6/23/2020.
- */
 public class LEAF_STRnode extends _ValueNode {
     private int val;
     public LEAF_STRnode(_Node parent, String value) {

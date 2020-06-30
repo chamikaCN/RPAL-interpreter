@@ -22,7 +22,6 @@ public class MultiLambdaNode extends _MultipolarNode implements Standardizable {
     @Override
     public void standardize() {
 
-        System.out.println("Standardized Multi Lambda node");
         _Node E = getExpression();
         ArrayList<_Node> Vs = getVariables();
         int varCount = getVariableCount();

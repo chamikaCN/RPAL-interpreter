@@ -3,7 +3,7 @@ import java.util.Objects;
 import java.util.Stack;
 
 /**
- * Created by chamikanandasiri on 6/28/2020.
+ * Created by chamikanandasiri on 6/27/2020.
  */
 public class CSEmachine {
 
@@ -36,14 +36,7 @@ public class CSEmachine {
             }
         }
         traverseTree(root, rootDelta);
-        System.out.println(deltas.size());
-        for (Delta del : deltas) {
-            displayDelta(del);
-            System.out.println("]]]]]]]]] " + del.peekValue().type);
-        }
-        System.out.println("]]]]]]]]]{{{{{{{{");
         evaluateMachine();
-        System.out.println("]]]]]]]]]{{{{{{{{" + String.valueOf(envCount));
     }
 
     public void traverseTree(_Node root, Delta delta) {
@@ -56,11 +49,6 @@ public class CSEmachine {
             return;
         } else {
             delta.pushValue(root);
-            if (root instanceof _ValueNode) {
-                System.out.println(((_ValueNode) root).getLeafValue());
-            } else {
-                System.out.println(root.type);
-            }
         }
         if (root instanceof _LeafNode)
             return;
@@ -80,7 +68,6 @@ public class CSEmachine {
         parentdelta.pushValue(trueDelta);
         parentdelta.pushValue(new Beta(arrow));
         traverseTree(((ArrowNode) arrow).getIfStatement(), parentdelta);
-        return;
     }
 
     private Delta startNewDelta(Delta parent, _Node newRoot, _Node id) {
@@ -99,24 +86,6 @@ public class CSEmachine {
         return curDelta;
     }
 
-    private void displayDelta(Delta d) {
-        System.out.println("new delta");
-        for (_Node n : d.getValuestack()) {
-            System.out.println(n.type);
-        }
-    }
-
-    private void displayStack(Stack<_Node> nodes) {
-        for (_Node n : nodes) {
-            if (n instanceof _ValueNode) {
-                System.out.println(((_ValueNode) n).getLeafValue());
-            }else if (n instanceof Environment) {
-                System.out.println("envi " + ((Environment) n).getId());
-            } else {
-                System.out.println(n.type);
-            }
-        }
-    }
 
     private void AddDeltaToControlStack(Delta delta) {
         for (int f = 0; f < delta.getValuestack().size(); f++) {
@@ -158,11 +127,6 @@ public class CSEmachine {
         } else {
             valueStack.push(m);
         }
-        System.out.println("@@@@@@@@@@@@@@@@@@@@");
-        displayStack(controlStack);
-        System.out.println("+++++++++++++++++++++");
-        displayStack(valueStack);
-        System.out.println("@@@@@@@@@@@@@@@@@@@@");
     }
 
     private void createTuple(_Node m) {
@@ -208,13 +172,12 @@ public class CSEmachine {
         }
     }
 
-    private Environment findPreviousEnvironment(){
+    private Environment findPreviousEnvironment() {
         Environment pre = null;
-        for (int h = valueStack.size()-1; h>=0;h--) {
+        for (int h = valueStack.size() - 1; h >= 0; h--) {
             _Node m = valueStack.elementAt(h);
-            if((m instanceof Environment) && m!=currentEnvironment){
-                System.out.println("going back to "+((Environment)m).getId());
-                pre = (Environment)m;
+            if ((m instanceof Environment) && m != currentEnvironment) {
+                pre = (Environment) m;
                 break;
             }
         }
@@ -233,7 +196,6 @@ public class CSEmachine {
 
 
     private void lookUpEnvironment(_Node m) {
-        System.out.println("Came to lookup");
         LEAF_IDnode iDnode = (LEAF_IDnode) m;
         _Node value = goThroughEnvironments(iDnode.getLeafValue(), currentEnvironment);
         if (value != null) {
@@ -351,17 +313,12 @@ public class CSEmachine {
             if (bindingcount < 2) {
                 _Node r = valueStack.pop();
                 currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue(), r);
-                System.out.println("//////// "+((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue() +" en "+ currentEnvironment.getId() + " par "+ ((Environment)currentEnvironment.getParent()).getId());
-                if(r instanceof _ValueNode){System.out.println(((_ValueNode) r).getLeafValue());}
             } else {
                 Tuple tup = (Tuple) valueStack.pop();
                 for (int h = 0; h < bindingcount; h++) {
                     currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue(), tup.getValueAt(h + 1));
-                    System.out.println("//////// "+((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue() +" en "+ currentEnvironment.getId() +" par "+ ((Environment)currentEnvironment.getParent()).getId());
-                    if(tup.getValueAt(h + 1) instanceof _ValueNode){System.out.println(((_ValueNode)tup.getValueAt(h + 1)).getLeafValue());}
                 }
             }
-            System.out.println("00000000 "+ currentEnvironment.getId()+" "+currentEnvironment.getValueCount());
             valueStack.push(currentEnvironment);
             controlStack.push(currentEnvironment);
             AddDeltaToControlStack(currentDelta);
@@ -401,7 +358,7 @@ public class CSEmachine {
             valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_BooleanNode));
             return true;
         } else if ((Objects.equals(val, "print")) || (Objects.equals(val, "Print"))) {
-            System.out.println("Final : " + ((_ValueNode) rand).getLeafValue());
+            System.out.println(((_ValueNode) rand).getLeafValue());
             valueStack.push(new LEAF_DummyNode(rand));
             return true;
         } else if ((Objects.equals(val, "stem")) || (Objects.equals(val, "Stem"))) {
@@ -421,54 +378,5 @@ public class CSEmachine {
             return false;
         }
 
-//            switch(identifier.getLeafValue()){
-//            case "Isinteger":
-//                checkTypeAndPushTrueOrFalse(rand, ASTNodeType.INTEGER);
-//                return true;
-//            case "Isstring":
-//                checkTypeAndPushTrueOrFalse(rand, ASTNodeType.STRING);
-//                return true;
-//            case "Isdummy":
-//                checkTypeAndPushTrueOrFalse(rand, ASTNodeType.DUMMY);
-//                return true;
-//            case "Isfunction":
-//                checkTypeAndPushTrueOrFalse(rand, ASTNodeType.DELTA);
-//                return true;
-//            case "Istuple":
-//                checkTypeAndPushTrueOrFalse(rand, ASTNodeType.TUPLE);
-//                return true;
-//            case "Istruthvalue":
-//                if(rand.getType()==ASTNodeType.TRUE||rand.getType()==ASTNodeType.FALSE)
-//                    pushTrueNode();
-//                else
-//                    pushFalseNode();
-//                return true;
-//            case "Stem":
-//                stem(rand);
-//                return true;
-//            case "Stern":
-//                stern(rand);
-//                return true;
-//            case "Conc":
-//            case "conc": //typos
-//                conc(rand, currentControlStack);
-//                return true;
-//            case "Print":
-//            case "print": //typos
-//                printNodeValue(rand);
-//                pushDummyNode();
-//                return true;
-//            case "ItoS":
-//                itos(rand);
-//                return true;
-//            case "Order":
-//                order(rand);
-//                return true;
-//            case "Null":
-//                isNullTuple(rand);
-//                return true;
-//            default:
-//                return false;
-//        }
     }
 }

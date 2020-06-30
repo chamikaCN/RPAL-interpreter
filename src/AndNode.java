@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by chamikanandasiri on 6/27/2020.
- */
 public class AndNode extends _MultipolarNode implements Standardizable {
     public AndNode(_Node parent) {
         super(parent);
@@ -28,11 +25,8 @@ public class AndNode extends _MultipolarNode implements Standardizable {
                 break;
             }
         }
-        int eleCount = getElementCount();
 
         if (equality) {
-            System.out.println("Standardized And node");
-            int level = getLevel();
             _TrunkNode par = (_TrunkNode) getParent();
             int thisIndex = par.getChildren().indexOf(this);
 

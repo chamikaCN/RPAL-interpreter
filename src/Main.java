@@ -10,7 +10,8 @@ public class Main {
     static HashMap<Integer, _Node> nodeCurrent;
 
     public static void main(String[] args) {
-        inputLines = ReadWriteHandler.getInstance().readFile("F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\substring.txt");
+        inputLines = ReadWriteHandler.getInstance().readFile(args[0]);
+        //"F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\substring.txt"
         childArray = new ArrayList<>();
         nodeCurrent = new HashMap<>();
         AST = new ArrayList<>();
@@ -19,22 +20,16 @@ public class Main {
         nodeCurrent.put(-1, new RootNode());
         countDots();
         createTree();
-        printTree(AST);
-        System.out.println("###############################");
         LoopingStandard(AST);
-        printTree(STtree);
         CSEmachine cse = new CSEmachine(STtree);
     }
 
-    private static void LoopingStandard(ArrayList<_Node> currentTree){
+    private static void LoopingStandard(ArrayList<_Node> currentTree) {
         boolean t = true;
         ArrayList<_Node> TempTree = currentTree;
-        while (t){
+        while (t) {
             STtree = new ArrayList<>();
             t = Standardization(TempTree);
-//            System.out.println("###############################");
-//            printTree(STtree);
-//            System.out.println("###############################");
             TempTree = new ArrayList<>(STtree);
         }
 
@@ -61,7 +56,7 @@ public class Main {
             _Node parent = nodeCurrent.get(Integer.parseInt(x[1]) - 1);
             _Node child = null;
             if (x[0].charAt(0) != '<') {
-                child = createNode(x[0], parent, Integer.parseInt(x[1]));
+                child = createNode(x[0], parent);
             } else if (x[0].charAt(2) == 'D') {
                 child = new LEAF_IDnode(parent, x[0].substring(4, x[0].length() - 1));
             } else if (x[0].charAt(2) == 'N') {
@@ -69,7 +64,7 @@ public class Main {
             } else if (x[0].charAt(2) == 'T') {
                 child = new LEAF_STRnode(parent, x[0].substring(6, x[0].length() - 2));
             } else if (x[0].charAt(1) == 'n') {
-                child =  new LEAF_NilNode(parent);
+                child = new LEAF_NilNode(parent);
             }
             if (nodeCurrent.containsKey(Integer.parseInt(x[1]))) {
                 nodeCurrent.replace(Integer.parseInt(x[1]), child);
@@ -81,7 +76,7 @@ public class Main {
         }
     }
 
-    private static _Node createNode(String x, _Node parent, int lev) {
+    private static _Node createNode(String x, _Node parent) {
         _Node returnNode;
         if (Objects.equals(x, "let")) {
             returnNode = new LetNode(parent);
@@ -134,9 +129,9 @@ public class Main {
         } else if (Objects.equals(x, "gamma")) {
             returnNode = new GammaNode(parent);
         } else if (Objects.equals(x, "true")) {
-            returnNode = new LEAF_BooleanNode(parent,true);
+            returnNode = new LEAF_BooleanNode(parent, true);
         } else if (Objects.equals(x, "false")) {
-            returnNode = new LEAF_BooleanNode(parent,false);
+            returnNode = new LEAF_BooleanNode(parent, false);
         } else if (Objects.equals(x, "nil")) {
             returnNode = new LEAF_NilNode(parent);
         } else if (Objects.equals(x, "dummy")) {
@@ -150,7 +145,7 @@ public class Main {
             returnNode = new RecNode(parent);
         } else if (Objects.equals(x, "=")) {
             returnNode = new EqualNode(parent);
-        }else if (Objects.equals(x, "function_form")) {
+        } else if (Objects.equals(x, "function_form")) {
             returnNode = new FunctionFormNode(parent);
 
         } else if (Objects.equals(x, "()")) {
@@ -166,41 +161,26 @@ public class Main {
 
     private static void setChildRelations(_Node parent, _Node child) {
         if (parent != null && child != null && (parent instanceof _TrunkNode)) {
-            ((_TrunkNode)parent).addChild(child);
+            ((_TrunkNode) parent).addChild(child);
 
         }
     }
 
-    private static void printTree(ArrayList<_Node> nodeTree) {
-        for (_Node n : nodeTree) {
-            if ((n instanceof _TrunkNode) && ((_TrunkNode)n).getChildren().size()>0) {
-                if( n.getParent() != null) {
-                    System.out.println(n.type + " at level " + n.getLevel() + " has parent " + n.getParent().type);
-                }
-                for (_Node m: ((_TrunkNode)n).getChildren()) {
-                    System.out.println(n.type + " at level " + n.getLevel() +" has child " + m.type);
-                }
-            }
-        }
-    }
-
-    public static void addSTtree(_Node node){
+    public static void addSTtree(_Node node) {
         STtree.add(node);
     }
 
     private static boolean Standardization(ArrayList<_Node> tree) {
         boolean didAnyStandardized = false;
-        for (_Node n: tree) {
-            if((n instanceof Standardizable)&&(!((_TrunkNode)n).getStandardized())){
+        for (_Node n : tree) {
+            if ((n instanceof Standardizable) && (!((_TrunkNode) n).getStandardized())) {
                 ((Standardizable) n).standardize();
-                didAnyStandardized = didAnyStandardized || ((_TrunkNode)n).getStandardized();
-                System.out.println("Main standard "+ n.type + " at " + n.getLevel());
-            }else if(!(n instanceof Standardizable) && !(n.disconnected)){
+                didAnyStandardized = didAnyStandardized || ((_TrunkNode) n).getStandardized();
+            } else if (!(n instanceof Standardizable) && !(n.disconnected)) {
                 addSTtree(n);
-                System.out.println("Added without "+ n.type + " at " + n.getLevel());
             }
         }
-    return didAnyStandardized;
+        return didAnyStandardized;
     }
 
 }

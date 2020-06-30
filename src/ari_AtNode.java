@@ -1,6 +1,3 @@
-/**
- * Created by chamikanandasiri on 6/27/2020.
- */
 public class ari_AtNode extends _MultipolarNode implements Standardizable {
     public ari_AtNode(_Node parent) {
         super(parent);
@@ -21,14 +18,12 @@ public class ari_AtNode extends _MultipolarNode implements Standardizable {
 
     @Override
     public void standardize() {
-        System.out.println("Standardized At node");
         _Node E1 = getExpression1();
         _Node E2 = getExpression2();
         _Node N = getN();
 
         _TrunkNode par = (_TrunkNode) getParent();
         int thisIndex = par.getChildren().indexOf(this);
-        int level = getLevel();
 
         disconnect();
 

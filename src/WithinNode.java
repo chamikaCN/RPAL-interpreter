@@ -1,8 +1,5 @@
 import java.util.Objects;
 
-/**
- * Created by chamikanandasiri on 6/27/2020.
- */
 public class WithinNode extends _BipolarNode implements Standardizable {
     public WithinNode(_Node parent) {
         super(parent);
@@ -13,7 +10,6 @@ public class WithinNode extends _BipolarNode implements Standardizable {
     public void standardize() {
 
         if (Objects.equals(getLeftChild().type, "=") && Objects.equals(getRightChild().type, "=")) {
-            System.out.println("Standardized Multi Lambda node");
             _Node X1 = ((_BipolarNode) getLeftChild()).getLeftChild();
             _Node E1 = ((_BipolarNode) getLeftChild()).getRightChild();
             _Node X2 = ((_BipolarNode) getRightChild()).getLeftChild();

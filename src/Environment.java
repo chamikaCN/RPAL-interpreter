@@ -1,8 +1,5 @@
 import java.util.HashMap;
 
-/**
- * Created by chamikanandasiri on 6/28/2020.
- */
 public class Environment extends _Node {
     private HashMap<String,_Node> values;
     private int id;

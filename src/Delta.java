@@ -1,13 +1,9 @@
 import java.util.ArrayList;
 import java.util.Stack;
 
-/**
- * Created by chamikanandasiri on 6/28/2020.
- */
 public class Delta extends _Node {
     private Environment linkedEnv;
     private Stack<_Node> valuestack;
-    private _Node binding;
     private ArrayList<_Node> bindings;
 
     public Delta(_Node parent) {
@@ -29,16 +25,8 @@ public class Delta extends _Node {
         return valuestack.peek();
     }
 
-    public _Node getBinding() {
-        return binding;
-    }
-
     public Stack<_Node> getValuestack() {
         return valuestack;
-    }
-
-    public void setBinding(_Node binding) {
-        this.binding =binding;
     }
 
     public _Node getBindingAt(int index){
