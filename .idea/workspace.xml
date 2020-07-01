@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="myrpal:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b6d134c4-7177-4778-9aec-97ba95a93fcd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/CSEMachine11.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/myrpal_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/AndNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/AndNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/FunctionFormNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/FunctionFormNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_DummyNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_DummyNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_INTnode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_INTnode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_NilNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_NilNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_ParenthesisNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_ParenthesisNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_STRnode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LEAF_STRnode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/LetNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/LetNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/Main.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/MultiLambdaNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/MultiLambdaNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ReadWriteHandler.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ReadWriteHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/RecNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/RecNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/TauNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/TauNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/WhereNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/WhereNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/WithinNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/WithinNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_BinaryOpNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_BinaryOpNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_BipolarNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_BipolarNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_LeafNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_LeafNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_MultipolarNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_MultipolarNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_Node.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_Node.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_TrunkNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_TrunkNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_UnaryOpNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_UnaryOpNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_UnipolarNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_UnipolarNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/_ValueNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/_ValueNode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_AtNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_AtNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_DoubleStarNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_DoubleStarNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_NegativeNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_NegativeNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_PlusNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_PlusNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_SlashNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_SlashNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/ari_StarNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/ari_StarNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_GreatEqualNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_GreatEqualNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_GreaterNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_GreaterNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_LessEqualNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_LessEqualNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_LesserNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_LesserNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_NotEqualNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_NotEqualNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_NotNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_NotNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPAL PRO/bool_OrNode.class" afterPath="$PROJECT_DIR$/out/production/RPAL PRO/bool_OrNode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AndNode.java" afterPath="$PROJECT_DIR$/src/AndNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ArrowNode.java" afterPath="$PROJECT_DIR$/src/ArrowNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beta.java" afterPath="$PROJECT_DIR$/src/Beta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSEmachine.java" afterPath="$PROJECT_DIR$/src/CSEmachine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Delta.java" afterPath="$PROJECT_DIR$/src/Delta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment.java" afterPath="$PROJECT_DIR$/src/Environment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Eta.java" afterPath="$PROJECT_DIR$/src/Eta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FunctionFormNode.java" afterPath="$PROJECT_DIR$/src/FunctionFormNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_BooleanNode.java" afterPath="$PROJECT_DIR$/src/LEAF_BooleanNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_DummyNode.java" afterPath="$PROJECT_DIR$/src/LEAF_DummyNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_INTnode.java" afterPath="$PROJECT_DIR$/src/LEAF_INTnode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_NilNode.java" afterPath="$PROJECT_DIR$/src/LEAF_NilNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_OPnode.java" afterPath="$PROJECT_DIR$/src/LEAF_OPnode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_ParenthesisNode.java" afterPath="$PROJECT_DIR$/src/LEAF_ParenthesisNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_STRnode.java" afterPath="$PROJECT_DIR$/src/LEAF_STRnode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LEAF_YStarNode.java" afterPath="$PROJECT_DIR$/src/LEAF_YStarNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LetNode.java" afterPath="$PROJECT_DIR$/src/LetNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MultiLambdaNode.java" afterPath="$PROJECT_DIR$/src/MultiLambdaNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RecNode.java" afterPath="$PROJECT_DIR$/src/RecNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Standardizable.java" afterPath="$PROJECT_DIR$/src/Standardizable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TauNode.java" afterPath="$PROJECT_DIR$/src/TauNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tuple.java" afterPath="$PROJECT_DIR$/src/Tuple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WhereNode.java" afterPath="$PROJECT_DIR$/src/WhereNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WithinNode.java" afterPath="$PROJECT_DIR$/src/WithinNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_BinaryOpNode.java" afterPath="$PROJECT_DIR$/src/_BinaryOpNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_BipolarNode.java" afterPath="$PROJECT_DIR$/src/_BipolarNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_LeafNode.java" afterPath="$PROJECT_DIR$/src/_LeafNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_MultipolarNode.java" afterPath="$PROJECT_DIR$/src/_MultipolarNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_Node.java" afterPath="$PROJECT_DIR$/src/_Node.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_TrunkNode.java" afterPath="$PROJECT_DIR$/src/_TrunkNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_UnaryOpNode.java" afterPath="$PROJECT_DIR$/src/_UnaryOpNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_UnipolarNode.java" afterPath="$PROJECT_DIR$/src/_UnipolarNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_ValueNode.java" afterPath="$PROJECT_DIR$/src/_ValueNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_AtNode.java" afterPath="$PROJECT_DIR$/src/ari_AtNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_DoubleStarNode.java" afterPath="$PROJECT_DIR$/src/ari_DoubleStarNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_NegativeNode.java" afterPath="$PROJECT_DIR$/src/ari_NegativeNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_PlusNode.java" afterPath="$PROJECT_DIR$/src/ari_PlusNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_SlashNode.java" afterPath="$PROJECT_DIR$/src/ari_SlashNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ari_StarNode.java" afterPath="$PROJECT_DIR$/src/ari_StarNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_GreatEqualNode.java" afterPath="$PROJECT_DIR$/src/bool_GreatEqualNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_GreaterNode.java" afterPath="$PROJECT_DIR$/src/bool_GreaterNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_LessEqualNode.java" afterPath="$PROJECT_DIR$/src/bool_LessEqualNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_LesserNode.java" afterPath="$PROJECT_DIR$/src/bool_LesserNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_NotEqualNode.java" afterPath="$PROJECT_DIR$/src/bool_NotEqualNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_NotNode.java" afterPath="$PROJECT_DIR$/src/bool_NotNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bool_OrNode.java" afterPath="$PROJECT_DIR$/src/bool_OrNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ReadWriteHandler.java" afterPath="$PROJECT_DIR$/src/ReadWriteHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,103 +62,106 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="CSEmachine.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CSEmachine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="96" column="44" lean-forward="false" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
+            <state relative-caret-position="350">
+              <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
               <folding>
-                <element signature="e#6563#6564#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiLambdaNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MultiLambdaNode.java">
+      <file leaf-file-name="LEAF_IDnode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_IDnode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-146">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadWriteHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ReadWriteHandler.java">
+      <file leaf-file-name="LEAF_INTnode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_INTnode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <file leaf-file-name="LEAF_NilNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_NilNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Standardizable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Standardizable.java">
+      <file leaf-file-name="LEAF_OPnode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_OPnode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TauNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TauNode.java">
+      <file leaf-file-name="LEAF_STRnode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_STRnode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tuple.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tuple.java">
+      <file leaf-file-name="LEAF_YStarNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LEAF_YStarNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhereNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WhereNode.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-112">
-              <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+            <state relative-caret-position="187">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#6381#6382#0" expanded="true" />
+                <element signature="e#6413#6414#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EqualNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EqualNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WithinNode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WithinNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WithinNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RecNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-197">
-              <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            <state relative-caret-position="102">
+              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -201,8 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CSEMachine.java" />
-        <option value="$PROJECT_DIR$/src/Detla.java" />
         <option value="$PROJECT_DIR$/src/CSEMachine11.java" />
         <option value="$PROJECT_DIR$/src/LEAF_TrueNode.java" />
         <option value="$PROJECT_DIR$/src/DeltaArrow.java" />
@@ -231,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/bool_NotEqualNode.java" />
         <option value="$PROJECT_DIR$/src/bool_NotNode.java" />
         <option value="$PROJECT_DIR$/src/bool_OrNode.java" />
-        <option value="$PROJECT_DIR$/src/CSEmachine.java" />
         <option value="$PROJECT_DIR$/src/Delta.java" />
         <option value="$PROJECT_DIR$/src/Environment.java" />
         <option value="$PROJECT_DIR$/src/Eta.java" />
@@ -244,7 +242,6 @@
         <option value="$PROJECT_DIR$/src/LEAF_ParenthesisNode.java" />
         <option value="$PROJECT_DIR$/src/LEAF_STRnode.java" />
         <option value="$PROJECT_DIR$/src/LEAF_YStarNode.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MultiLambdaNode.java" />
         <option value="$PROJECT_DIR$/src/RecNode.java" />
         <option value="$PROJECT_DIR$/src/Standardizable.java" />
@@ -252,6 +249,10 @@
         <option value="$PROJECT_DIR$/src/Tuple.java" />
         <option value="$PROJECT_DIR$/src/WhereNode.java" />
         <option value="$PROJECT_DIR$/src/WithinNode.java" />
+        <option value="$PROJECT_DIR$/src/LetNode.java" />
+        <option value="$PROJECT_DIR$/src/ReadWriteHandler.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/CSEmachine.java" />
       </list>
     </option>
   </component>
@@ -316,8 +317,26 @@
               <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
+              <option name="myItemId" value="RPAL PRO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPAL PRO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myrpal_jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,9 +349,10 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rpal_interpreter" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -622,12 +642,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593520955373</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Formatted project">
+      <created>1593522135261</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593522135261</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -638,14 +664,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09936909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1214511" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -669,7 +695,8 @@
     <MESSAGE value="control structure generation" />
     <MESSAGE value="recursion added" />
     <MESSAGE value="aug node implementation left" />
-    <option name="LAST_COMMIT_MESSAGE" value="aug node implementation left" />
+    <MESSAGE value="Formatted project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatted project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -680,70 +707,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/_UnipolarNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_ValueNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AndNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ari_AtNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ari_DoubleStarNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ari_MinusNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ari_NegativeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ari_PlusNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ari_SlashNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -756,46 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArrowNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AugNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bool_AndNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bool_EqualNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -856,24 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommaNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSEmachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4604">
-          <caret line="324" column="53" lean-forward="false" selection-start-line="324" selection-start-column="53" selection-end-line="324" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Delta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -894,7 +799,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EqualNode.java">
+    <entry file="file://$PROJECT_DIR$/src/Eta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultiLambdaNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReadWriteHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_BipolarNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ari_NegativeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommaNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
@@ -902,10 +855,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Eta.java">
+    <entry file="file://$PROJECT_DIR$/src/Tuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AndNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ari_AtNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ari_DoubleStarNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ari_MinusNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ari_PlusNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ArrowNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bool_AndNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bool_EqualNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -934,6 +951,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WhereNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TauNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Standardizable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RecNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LEAF_ParenthesisNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LetNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AugNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LEAF_BooleanNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -958,14 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LEAF_INTnode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LEAF_NilNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -975,14 +1056,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LEAF_OPnode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LEAF_ParenthesisNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1006,93 +1079,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LetNode.java">
+    <entry file="file://$PROJECT_DIR$/src/EqualNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="96" column="44" lean-forward="false" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
-          <folding>
-            <element signature="e#6563#6564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultiLambdaNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReadWriteHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RootNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Standardizable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TauNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tuple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WhereNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WithinNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LEAF_INTnode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6413#6414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CSEmachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,10 +1130,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>myrpal:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

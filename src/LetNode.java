@@ -10,7 +10,6 @@ public class LetNode extends _BipolarNode implements Standardizable {
     public void standardize() {
 
         if (Objects.equals(getLeftChild().type, "=")) {
-            System.out.println("Standardized Let node");
             _Node X = ((_BipolarNode)getLeftChild()).getLeftChild();
             _Node E = ((_BipolarNode)getLeftChild()).getRightChild();
             _Node P = getRightChild();

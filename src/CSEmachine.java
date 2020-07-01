@@ -17,8 +17,21 @@ public class CSEmachine {
     private Environment currentEnvironment;
     private int envCount = 0;
 
+    private static CSEmachine instance = null;
 
-    public CSEmachine(ArrayList<_Node> ST) {
+    private CSEmachine() {
+    }
+
+
+    public static CSEmachine getInstance() {
+        if (instance == null)
+            instance = new CSEmachine();
+
+        return instance;
+    }
+
+    //main method to run the cse machine
+    public void Evalutate(ArrayList<_Node> ST) {
         StructuredTree = ST;
         controlStack = new Stack<>();
         valueStack = new Stack<>();
@@ -39,6 +52,7 @@ public class CSEmachine {
         evaluateMachine();
     }
 
+    // traverse through the structured tree and flatten it
     public void traverseTree(_Node root, Delta delta) {
 
         if (Objects.equals(root.type, "lambda")) {
@@ -58,18 +72,7 @@ public class CSEmachine {
         }
     }
 
-
-    private void AddArrowNode(_Node arrow, Delta parentdelta) {
-        Delta falseDelta = new Delta(arrow);
-        traverseTree(((ArrowNode) arrow).getElseClause(), falseDelta);
-        parentdelta.pushValue(falseDelta);
-        Delta trueDelta = new Delta(arrow);
-        traverseTree(((ArrowNode) arrow).getThenClause(), trueDelta);
-        parentdelta.pushValue(trueDelta);
-        parentdelta.pushValue(new Beta(arrow));
-        traverseTree(((ArrowNode) arrow).getIfStatement(), parentdelta);
-    }
-
+    //flattening differant nodes
     private Delta startNewDelta(Delta parent, _Node newRoot, _Node id) {
         Delta curDelta = new Delta(parent);
         if (id instanceof CommaNode) {
@@ -86,6 +89,16 @@ public class CSEmachine {
         return curDelta;
     }
 
+    private void AddArrowNode(_Node arrow, Delta parentdelta) {
+        Delta falseDelta = new Delta(arrow);
+        traverseTree(((ArrowNode) arrow).getElseClause(), falseDelta);
+        parentdelta.pushValue(falseDelta);
+        Delta trueDelta = new Delta(arrow);
+        traverseTree(((ArrowNode) arrow).getThenClause(), trueDelta);
+        parentdelta.pushValue(trueDelta);
+        parentdelta.pushValue(new Beta(arrow));
+        traverseTree(((ArrowNode) arrow).getIfStatement(), parentdelta);
+    }
 
     private void AddDeltaToControlStack(Delta delta) {
         for (int f = 0; f < delta.getValuestack().size(); f++) {
@@ -93,7 +106,7 @@ public class CSEmachine {
         }
     }
 
-
+    //Start eveluating the flattened deltas
     private void evaluateMachine() {
         currentDelta = rootDelta;
         currentEnvironment = primitiveEnvironment;
@@ -105,6 +118,7 @@ public class CSEmachine {
         }
     }
 
+    //One step of the cse machine
     private void evaluateRound() {
         _Node m = controlStack.pop();
         if (m instanceof _BinaryOpNode) {
@@ -119,6 +133,8 @@ public class CSEmachine {
             applyArrowFunction(m);
         } else if (m instanceof TauNode) {
             createTuple(m);
+        } else if (m instanceof LEAF_NilNode) {
+            valueStack.push(new Tuple(m));
         } else if (m instanceof Environment) {
             removeEnvironment(m);
         } else if (m instanceof Delta) {
@@ -129,6 +145,7 @@ public class CSEmachine {
         }
     }
 
+    //different funtionalities according to the nodes encountered
     private void createTuple(_Node m) {
         TauNode t = (TauNode) m;
         int count = t.getElementCount();
@@ -184,6 +201,47 @@ public class CSEmachine {
         return pre;
     }
 
+    private void applyGamma(_Node m) {
+        _Node rator = valueStack.pop();
+        if (rator instanceof Delta) {
+            Delta del = (Delta) rator;
+            currentDelta = del;
+            currentEnvironment = new Environment(currentDelta.getLinkedEnv(), envCount);
+            envCount++;
+            int bindingcount = currentDelta.getBindingcount();
+
+            if (bindingcount < 2) {
+                _Node r = valueStack.pop();
+                currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue(), r);
+            } else {
+                Tuple tup = (Tuple) valueStack.pop();
+                for (int h = 0; h < bindingcount; h++) {
+                    currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue(), tup.getValueAt(h + 1));
+                }
+            }
+            valueStack.push(currentEnvironment);
+            controlStack.push(currentEnvironment);
+            AddDeltaToControlStack(currentDelta);
+        } else if (rator instanceof LEAF_YStarNode) {
+            Delta del = (Delta) valueStack.pop();
+            valueStack.push(new Eta(rator, del));
+        } else if (rator instanceof Tuple) {
+            Tuple tup = (Tuple) rator;
+            LEAF_INTnode index = (LEAF_INTnode) valueStack.pop();
+            _Node retrieved = tup.getValueAt(index.getInt());
+            valueStack.push(retrieved);
+        } else if (rator instanceof Eta) {
+            controlStack.push(m);
+            controlStack.push(new GammaNode(m));
+            Delta del = ((Eta) rator).getLinkedDelta();
+            valueStack.push(rator);
+            valueStack.push(del);
+        } else {
+            System.out.println("Error in gamma operation");
+        }
+
+    }
+
     private void handleIdentifier(_Node identifier) {
         _Node rand = valueStack.pop();
         _Node gamma = controlStack.pop();
@@ -194,7 +252,64 @@ public class CSEmachine {
         }
     }
 
+    //if the identifier is predifined
+    private boolean isKnownIdentifier(_Node id, _Node rand) {
+        LEAF_IDnode identifier = (LEAF_IDnode) id;
+        String val = identifier.getLeafValue();
+        if (Objects.equals(val, "Isstring")) {
+            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_STRnode));
+            return true;
+        } else if (Objects.equals(val, "Isinteger")) {
+            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_INTnode));
+            return true;
+        } else if (Objects.equals(val, "Isfunction")) {
+            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof Delta));
+            return true;
+        } else if (Objects.equals(val, "Istruthvalue")) {
+            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_BooleanNode));
+            return true;
+        } else if ((Objects.equals(val, "print")) || (Objects.equals(val, "Print"))) {
+            if(rand instanceof _ValueNode) {
+                System.out.println(((_ValueNode) rand).getLeafValue());
+            }else if(rand instanceof Tuple){
+                printTuple((Tuple)rand);
+            }
+            valueStack.push(new LEAF_DummyNode(rand));
+            return true;
+        } else if ((Objects.equals(val, "stem")) || (Objects.equals(val, "Stem"))) {
+            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) rand).getLeafValue().substring(0, 1)));
+            return true;
+        } else if ((Objects.equals(val, "stern")) || (Objects.equals(val, "Stern"))) {
+            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) rand).getLeafValue().substring(1)));
+            return true;
+        } else if ((Objects.equals(val, "conc")) || (Objects.equals(val, "Conc"))) {
+            _Node firstStr = valueStack.pop();
+            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) firstStr).getLeafValue().concat(((LEAF_STRnode) rand).getLeafValue())));
+            return true;
+        } else if ((Objects.equals(val, "order")) || (Objects.equals(val, "Order"))) {
+            valueStack.push(new LEAF_INTnode(rand, ((Tuple) rand).getCount()));
+            return true;
+        } else {
+            return false;
+        }
 
+    }
+
+    private void printTuple(Tuple rand) {
+        System.out.print("(");
+        int count = rand.getCount();
+        String[] elements = new String[count];
+        for(int u = 0; u<count; u++){
+            elements[u] = (((_ValueNode)rand.getValueAt(u+1)).getLeafValue());
+        }
+        String out = String.join(", ",elements);
+        System.out.print(out);
+        System.out.print(")");
+        System.out.print("\n");
+    }
+
+
+    //if the identifier is not predefined
     private void lookUpEnvironment(_Node m) {
         LEAF_IDnode iDnode = (LEAF_IDnode) m;
         _Node value = goThroughEnvironments(iDnode.getLeafValue(), currentEnvironment);
@@ -216,6 +331,7 @@ public class CSEmachine {
         }
     }
 
+    //for all Uops found on control
     private void doUnaryOperation(_Node op) {
         _Node value = valueStack.pop();
         if (Objects.equals(op.type, "not")) {
@@ -229,6 +345,7 @@ public class CSEmachine {
         }
     }
 
+    //for all ops found on control
     private void doBinaryOperation(_Node op) {
         _Node value1 = valueStack.pop();
         _Node value2 = valueStack.pop();
@@ -296,87 +413,13 @@ public class CSEmachine {
             LEAF_BooleanNode val1 = (LEAF_BooleanNode) value1;
             LEAF_BooleanNode val2 = (LEAF_BooleanNode) value2;
             valueStack.push(new LEAF_BooleanNode(op.getParent(), val1.getBooleanValue() || val2.getBooleanValue()));
+        } else if (Objects.equals(op.type, "aug")) {
+            Tuple val1 = (Tuple) value1;
+            val1.addValue(value2);
+            valueStack.push(val1);
         } else {
             System.out.println("Error in unary operation");
         }
     }
 
-    private void applyGamma(_Node m) {
-        _Node rator = valueStack.pop();
-        if (rator instanceof Delta) {
-            Delta del = (Delta) rator;
-            currentDelta = del;
-            currentEnvironment = new Environment(currentDelta.getLinkedEnv(), envCount);
-            envCount++;
-            int bindingcount = currentDelta.getBindingcount();
-
-            if (bindingcount < 2) {
-                _Node r = valueStack.pop();
-                currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(0)).getLeafValue(), r);
-            } else {
-                Tuple tup = (Tuple) valueStack.pop();
-                for (int h = 0; h < bindingcount; h++) {
-                    currentEnvironment.addValue(((_ValueNode) currentDelta.getBindingAt(h)).getLeafValue(), tup.getValueAt(h + 1));
-                }
-            }
-            valueStack.push(currentEnvironment);
-            controlStack.push(currentEnvironment);
-            AddDeltaToControlStack(currentDelta);
-        } else if (rator instanceof LEAF_YStarNode) {
-            Delta del = (Delta) valueStack.pop();
-            valueStack.push(new Eta(rator, del));
-        } else if (rator instanceof Tuple) {
-            Tuple tup = (Tuple) rator;
-            LEAF_INTnode index = (LEAF_INTnode) valueStack.pop();
-            _Node retrieved = tup.getValueAt(index.getInt());
-            valueStack.push(retrieved);
-        } else if (rator instanceof Eta) {
-            controlStack.push(m);
-            controlStack.push(new GammaNode(m));
-            Delta del = ((Eta) rator).getLinkedDelta();
-            valueStack.push(rator);
-            valueStack.push(del);
-        } else {
-            System.out.println("Error in gamma operation");
-        }
-
-    }
-
-    private boolean isKnownIdentifier(_Node id, _Node rand) {
-        LEAF_IDnode identifier = (LEAF_IDnode) id;
-        String val = identifier.getLeafValue();
-        if (Objects.equals(val, "Isstring")) {
-            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_STRnode));
-            return true;
-        } else if (Objects.equals(val, "Isinteger")) {
-            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_INTnode));
-            return true;
-        } else if (Objects.equals(val, "Isfunction")) {
-            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof Delta));
-            return true;
-        } else if (Objects.equals(val, "Istruthvalue")) {
-            valueStack.push(new LEAF_BooleanNode(rand, rand instanceof LEAF_BooleanNode));
-            return true;
-        } else if ((Objects.equals(val, "print")) || (Objects.equals(val, "Print"))) {
-            System.out.println(((_ValueNode) rand).getLeafValue());
-            valueStack.push(new LEAF_DummyNode(rand));
-            return true;
-        } else if ((Objects.equals(val, "stem")) || (Objects.equals(val, "Stem"))) {
-            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) rand).getLeafValue().substring(0, 1)));
-            return true;
-        } else if ((Objects.equals(val, "stern")) || (Objects.equals(val, "Stern"))) {
-            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) rand).getLeafValue().substring(1)));
-            return true;
-        } else if ((Objects.equals(val, "conc")) || (Objects.equals(val, "Conc"))) {
-            _Node firstStr = valueStack.pop();
-            valueStack.push(new LEAF_STRnode(rand, ((LEAF_STRnode) firstStr).getLeafValue().concat(((LEAF_STRnode) rand).getLeafValue())));
-            return true;
-        } else if ((Objects.equals(val, "order")) || (Objects.equals(val, "Order"))) {
-            valueStack.push(new LEAF_INTnode(rand, ((Tuple) rand).getCount()));
-            return true;
-        } else {
-            return false;
-        }
-
-    }
 }

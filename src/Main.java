@@ -10,8 +10,8 @@ public class Main {
     static HashMap<Integer, _Node> nodeCurrent;
 
     public static void main(String[] args) {
+        //takes input from the given file
         inputLines = ReadWriteHandler.getInstance().readFile(args[0]);
-        //"F:\\Engineering\\Modules\\Semester 5\\Programming Languages\\RPAL PRO\\inputs\\substring.txt"
         childArray = new ArrayList<>();
         nodeCurrent = new HashMap<>();
         AST = new ArrayList<>();
@@ -20,21 +20,11 @@ public class Main {
         nodeCurrent.put(-1, new RootNode());
         countDots();
         createTree();
-        LoopingStandard(AST);
-        CSEmachine cse = new CSEmachine(STtree);
+        LoopingStandardization(AST);
+        CSEmachine.getInstance().Evalutate(STtree);
     }
 
-    private static void LoopingStandard(ArrayList<_Node> currentTree) {
-        boolean t = true;
-        ArrayList<_Node> TempTree = currentTree;
-        while (t) {
-            STtree = new ArrayList<>();
-            t = Standardization(TempTree);
-            TempTree = new ArrayList<>(STtree);
-        }
-
-    }
-
+    //create node name, level pairs
     private static void countDots() {
         for (String s : inputLines) {
             int count = 0;
@@ -51,6 +41,7 @@ public class Main {
         }
     }
 
+    //create new nodes for all node names in the child array
     private static void createTree() {
         for (String[] x : childArray) {
             _Node parent = nodeCurrent.get(Integer.parseInt(x[1]) - 1);
@@ -76,6 +67,7 @@ public class Main {
         }
     }
 
+    //create all trunk nodes
     private static _Node createNode(String x, _Node parent) {
         _Node returnNode;
         if (Objects.equals(x, "let")) {
@@ -159,6 +151,7 @@ public class Main {
         return returnNode;
     }
 
+    //add relevent children to each nodes children arraylist
     private static void setChildRelations(_Node parent, _Node child) {
         if (parent != null && child != null && (parent instanceof _TrunkNode)) {
             ((_TrunkNode) parent).addChild(child);
@@ -170,6 +163,19 @@ public class Main {
         STtree.add(node);
     }
 
+    //loop through standardization process until necessary nodes are standerized
+    private static void LoopingStandardization(ArrayList<_Node> currentTree) {
+        boolean t = true;
+        ArrayList<_Node> TempTree = currentTree;
+        while (t) {
+            STtree = new ArrayList<>();
+            t = Standardization(TempTree);
+            TempTree = new ArrayList<>(STtree);
+        }
+
+    }
+
+    //call each node's standardization method
     private static boolean Standardization(ArrayList<_Node> tree) {
         boolean didAnyStandardized = false;
         for (_Node n : tree) {
