@@ -2,6 +2,12 @@
 An interpreter developed for the RPAL language.
 This Project was implemented using java (1.8) on Windows OS. It has a class-based structure and the algorithm can be categorized into four parts.
 
+### User Guide
+The compiled executable jar file of the interpreter can be downloaded from [this link](https://drive.google.com/file/d/1pictHnjrnRrE_WoFkVsmcRoOzAQChMyG/view?usp=sharing).
+It can be run with 
+`java -jar myrpal.jar <input filename>`.
+Input files should have the Abstract Syntax Tree in [this format](https://drive.google.com/file/d/1HyYsgZSzesI4MevqeHNRYiyYw_283Cu3/view?usp=sharing).
+
 ## Structure
 
 #### Reading the input from given text file
@@ -17,9 +23,3 @@ Standardization process happens as a continuous loop until no nodes are standard
 #### CSE machine
 CSE machine is implemented in the CSEmachine class. It takes the Structured tree as the input and flatten the tree into several delta queries.Then the environment is created and root delta is pushed to the control stack. Process continues until the Control stack is empty.
 
-## User Guide
-
-The compiled executable jar file of the interpreter can be downloaded from [this link](https://drive.google.com/file/d/1pictHnjrnRrE_WoFkVsmcRoOzAQChMyG/view?usp=sharing).
-It can be run with 
-`java -jar myrpal.jar <input filename>`.
-Input files should have the Abstract Syntax Tree in [this format](https://drive.google.com/file/d/1HyYsgZSzesI4MevqeHNRYiyYw_283Cu3/view?usp=sharing).
